@@ -1,6 +1,7 @@
 import Mock from 'mockjs'
 import loginAPI from './login'
 import articleAPI from './article'
+import companyAPI from './company'
 import remoteSearchAPI from './remoteSearch'
 import transactionAPI from './transaction'
 
@@ -35,5 +36,12 @@ Mock.mock(/\/search\/user/, 'get', remoteSearchAPI.searchUser)
 
 // 账单相关
 Mock.mock(/\/transaction\/list/, 'get', transactionAPI.getList)
+
+// Company
+Mock.mock(/\/company\/list/, 'get', companyAPI.getList)
+Mock.mock(/\/company\/detail/, 'get', companyAPI.getArticle)
+Mock.mock(/\/company\/pv/, 'get', companyAPI.getPv)
+Mock.mock(/\/company\/create/, 'post', companyAPI.createArticle)
+Mock.mock(/\/company\/update/, 'post', companyAPI.updateArticle)
 
 export default Mock

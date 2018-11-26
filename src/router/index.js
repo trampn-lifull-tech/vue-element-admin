@@ -207,6 +207,19 @@ export const asyncRouterMap = [
   },
 
   {
+    path: '/company',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/company/index'),
+        name: 'Company',
+        meta: { title: 'Company', icon: 'tree' }
+      }
+    ]
+  },
+
+  {
     path: '/error',
     component: Layout,
     redirect: 'noredirect',
